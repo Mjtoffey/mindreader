@@ -6,29 +6,30 @@ Display content on the screen, based on current state
 
 
 #INIT
-
-1. Header
+1.  READ currentPage (pages [0])
+2.  INIT pages arr
+3. Header
     * displays text with instructions for user
 
-2. GO button
+4. GO button
     * allows user to start the game (change state)
   
-3. p
+5. p
     * displays subtext (examples, and instructions for use of the page)
 
-4. NEXT button
+6. NEXT button
     * allows user to move to next page (change state)
  
-5. RETURN button
+7. RETURN button
     * allows user to return to inital page value
     
-6. OBJECTS array
+8. OBJECTS array
     * array of objects, containing new page content to displayed on click of next, go or return (array should contain new infromation for the page ie. h1, p and buttons)   
     
-7. SYMBOLS array(random)
+9. SYMBOLS array(random)
     * array containing symbols to be assigned to number value  
    
-8. MENU of numbers
+10. MENU of numbers
     * an element containg a list of numbers 1-99 with corresponding symbol(random) to allow for checking of accuracy
 
 #FUNTCIONS
