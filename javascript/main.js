@@ -39,7 +39,7 @@ let pages = [
   {
     info: null,
     actionBtnLabel: false,
-    description: 'Your symbol is " " ', //symbols
+    description: "Your symbol is", //symbols
     goRef: "🍔",
   },
 ];
@@ -76,6 +76,21 @@ function render() {
   } else {
     actionBtn.style.visibility = "visible";
     actionBtn.textContent = pages[currentPage].actionBtnLabel;
+  }
+
+  if (pages[currentPage].info === null) {
+    pages[currentPage].info = multiNine();
+    function multiNine() {
+      for (let i = 0; i < 100; i++) {
+        if (i % 9 === 0) {
+          return i + " = &";
+        } else {
+          const randomIndex = Math.floor(Math.random() * symbols.length);
+          const item = symbols[randomIndex];
+          return i + " = " + item;
+        }
+      }
+    }
   }
 }
 
