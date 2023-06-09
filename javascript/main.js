@@ -39,7 +39,7 @@ let pages = [
   {
     info: null,
     actionBtnLabel: false,
-    description: "Your symbol is", //symbols
+    description: "", //symbols
     goRef: "🍔",
   },
 ];
@@ -79,19 +79,30 @@ function render() {
   }
 
   if (pages[currentPage].info === null) {
-    pages[currentPage].info = multiNine();
-    function multiNine() {
-      for (let i = 0; i < 100; i++) {
-        if (i % 9 === 0) {
-          return i + " = &";
-        } else {
-          const randomIndex = Math.floor(Math.random() * symbols.length);
-          const item = symbols[randomIndex];
-          return i + " = " + item;
-        }
-      }
+    pages[currentPage].info = divisNine();
+  }
+}
+
+let chosenSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+
+function divisNine() {
+  //capture string to return
+  //create string variable to hold all
+  // remove return
+  //concatanate the string
+  //at end of function return string and functions
+  var str = "";
+  let chosenSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+  for (let i = 0; i < 100; i++) {
+    if (i % 9 === 0) {
+      str = str + i + " = " + chosenSymbol + "<br>";
+    } else {
+      let randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
+      str = str + i + " = " + randomSymbol + "<br>";
     }
   }
+  pages[5].info = chosenSymbol;
+  pages[4].description = str;
 }
 
 render();
